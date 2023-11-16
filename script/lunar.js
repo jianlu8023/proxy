@@ -151,8 +151,15 @@ var temp = ( function () {
     return calendar;
 }
 )().solar2lunar();
-console.log(temp)
-if (true== temp["flag"]){
-$notify("明天农历 "+temp["lunarDate"])
-}
-$done();
+
+if (typeof $notification !== "undefined") {
+      $notification.post("明日农历", temp["lunarDate"]);
+    } else if (typeof $notify !== "undefined") {
+      $notify("明日农历", temp["lunarDate"]);
+    }
+    $done();
+
+//if (true== temp["flag"]){
+//$notify("明天农历 "+temp["lunarDate"])
+//}
+//$done();
