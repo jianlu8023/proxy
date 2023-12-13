@@ -158,7 +158,7 @@ var temp = ( function () {
 
 console.log(temp)
 if (isQuantumultX) {
-        $notify("明日农历"+temp["lunarDate"]);
+        $notify("明日农历"+temp["lunarDate"],"","");
     } else if (isSurge || isLoon) {
         $notification.post("明日农历"+temp["lunarDate"],"","");
     }
@@ -182,6 +182,9 @@ if (true == temp["flag"]){
     //}
 //}
 //$done();
+
+
+}
 
 //if (true== temp["flag"]){
 //$notify("明天农历 "+temp["lunarDate"])
