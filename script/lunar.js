@@ -1,5 +1,8 @@
 const res = {};
 const date = [];
+const isQuantumultX = typeof $task !== "undefined";
+const isSurge = typeof $httpClient !== "undefined";
+const isLoon = typeof $loon !== "undefined";
 var temp = ( function () {
     'use strict';
     var lunarInfo = [ 0x04bd8, 0x04ae0, 0x0a570, 0x054d5, 0x0d260, 0x0d950, 0x16554, 0x056a0, 0x09ad0, 0x055d2, //1900-1909
@@ -151,7 +154,22 @@ var temp = ( function () {
     return calendar;
 }
 )().solar2lunar();
+if (isQuantumultX) {
+    $notify("明日农历"+temp["lunarDate"]);
+  } else if (isSurge || isLoon) {
+    $notification.post( "明日农历"+temp["lunarDate"]);
+  }
+  $done();
+
+
+
+
 if (true== temp["flag"]){
+    
+    
+    
+    
+    
     if (typeof $notification !== "undefined") {
           $notification.post("明日农历"+temp["lunarDate"]);
     } else if (typeof $notify !== "undefined") {
