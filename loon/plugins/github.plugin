@@ -1,0 +1,14 @@
+#!name= github
+#!desc= github加速
+#!author= jianlu
+#!homepage= https://github.com/jianlu8023/proxy
+#!date = 2023-12-16 14:15
+#!icon= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub_Letter.png
+
+
+[Url Rewrite]
+^https?://raw.githubusercontent.com https://raw.githubusercontentS.com 302
+
+
+[MITM]
+hostname = raw.githubusercontent.com
