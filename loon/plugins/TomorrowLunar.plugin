@@ -1,0 +1,11 @@
+#!name= 明日农历
+#!desc= 获取明日农历日期
+#!author= jianlu
+#!homepage= https://github.com/jianlu8023/proxy
+#!date = 2024-05-10 19:47
+#!openUrl =
+
+
+
+[Script]
+cron "0 30 19 * * *" script-path = https://raw.githubusercontent.com/jianlu8023/proxy/master/resources/scripts/lunar.js, tag = 获取明日农历
