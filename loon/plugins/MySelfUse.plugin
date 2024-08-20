@@ -1,0 +1,19 @@
+#!name = 自用的脚本合集
+#!desc = 自用的脚本合集
+#!author = jianlu8023[https://github.com/jianlu8023]
+#!tag = 脚本合集
+#!system =
+#!system_version =
+#!loon_version = 3.2.1(739)
+#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
+#!date = 2024-08-20 11:49:45
+
+[Argument]
+TomorrowCron = input, "0 30 19 * * *", tag = 明日农历定时参数, desc = 这里需要输入符合CRON表达式的参数
+TomorrowEnable = switch, true, false, tag = 明日农历开关, desc = 此开关控制插件是否开启明日农历
+
+[Rule]
+DOMAIN, testflight.apple.com, PROXY
+
+[Script]
+cron {TomorrowCron} script-path = https://raw.githubusercontent.com/jianlu8023/proxy/master/resources/scripts/lunar.js, tag = 明日农历, timeout = 300, enable = {TomorrowEnable}
