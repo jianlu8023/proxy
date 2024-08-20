@@ -5,7 +5,7 @@
 #!system =
 #!system_version =
 #!loon_version = 3.2.1(739)
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
+#!homepage = https://github.com/jianlu8023/proxy/loon/plugins/MySelfUse.plugin
 #!date = 2024-08-20 11:49:45
 
 [Argument]
