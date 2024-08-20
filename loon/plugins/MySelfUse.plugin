@@ -15,7 +15,7 @@ CountDown = switch, true, false, tag = 倒数日开关, desc = 此开关控制�
 GasPriceCron = input, "0 8 * * *", tag = 气油价格定时参数, desc = 这里需要输入符合CRON表达式的参数
 GasPrice = switch, true, false, tag = 气油价格开关, desc = 此开关控制插件是否开启气油价格
 GasPriceCity = input, "wulumuqi", tag = 气油价格城市, desc = 这里需要输入城市名称
-GasPriceCity1 = input, "油价提醒", tag = 油价提醒城市, desc = 这里需要输入城市名称
+GasPriceCity1 = input, "新疆", tag = 油价提醒城市, desc = 这里需要输入城市名称
 NetInfo = switch, true, false, tag = 网络信息开关, desc = 此开关控制插件是否开启网络信息
 AppCron = input, "0 0 17 ? * *", tag = AppStore限免定时参数, desc = 这里需要输入符合CRON表达式的参数
 App = switch, true, false, tag = AppStore限免开关, desc = 此开关控制插件是否开启AppStore限免
@@ -38,25 +38,20 @@ cron {TomorrowCron} script-path = https://raw.githubusercontent.com/jianlu8023/p
 cron {CountDownCron} script-path = https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/TimeCard.js, tag = 倒数日, timeout = 100, enable = {CountDown}, img-url = https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png,
 cron {GasPriceCron} script-path = https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js, tag = 今日油价, timeout = 100, enabled = {GasPrice},  argument = {GasPriceCity}, img-url = https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png,
 generic script-path = https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js, tag = 网络信息查询, timeout = 120,  enable = {NetInfo}
-cron {AppCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/appsdoor.js, tag = AppStore限免APP, timeout = 100, enabled = {App},
-cron {NetEaseCloudCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/nm.js, tag = 网易云热歌榜, timeout = 100, enabled = {NetEaseCloud},
-cron {HistoryTodayCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, tag = 历史上的今天, timeout = 100, enabled = {HistoryTodayCron},
+cron {AppCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/appsdoor.js, tag = AppStore限免APP, timeout = 100, enabled = {App}
+cron {NetEaseCloudCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/nm.js, tag = 网易云热歌榜, timeout = 100, enabled = {NetEaseCloud}
+cron {HistoryTodayCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, tag = 历史上的今天, timeout = 100, enabled = {HistoryTodayCron}
 cron {WeatherTodayCron} script-path = https://whatshub.top/plugin/tianqi.js, tag = 今日天气, timeout = 100, argument = {WeatherTodayCity}, enabled = {WeatherToday}
-cron {JrpyCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rumors.js, tag = 今日辟谣, timeout = 100, enabled = {Jrpy},
+cron {JrpyCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rumors.js, tag = 今日辟谣, timeout = 100, enabled = {Jrpy}
 cron {GasPriceCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/oil.js, tag = 油价提醒, timeout = 100, enabled = {GasPrice},  argument = {GasPriceCity1}
 cron {JrhlCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rates.js, tag = 今日汇率, timeout = 100, enabled = {Jrhl}
 cron {Day60sCron} script-path = https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, tag = 每天60秒读懂世界, timeout = 100, enabled = {Day60s},  img-url = https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/60s.png
 
 [Rule]
-DOMAIN, t.weather.sojson.com, PROXY
-DOMAIN, m.qiyoujiage.com, PROXY
-DOMAIN, gofans.cn, PROXY
-DOMAIN, music.163.com, PROXY
-DOMAIN, lishishangdejintian.bmcx.com, PROXY
-DOMAIN, www.piyao.org.cn, PROXY
-DOMAIN, api.exchangerate-api.com, PROXY
-
-
-
-
-
+DOMAIN, t.weather.sojson.com, DIRECT
+DOMAIN, m.qiyoujiage.com, DIRECT
+DOMAIN, gofans.cn, DIRECT
+DOMAIN, music.163.com, DIRECT
+DOMAIN, lishishangdejintian.bmcx.com, DIRECT
+DOMAIN, www.piyao.org.cn, DIRECT
+DOMAIN, api.exchangerate-api.com, DIRECT
