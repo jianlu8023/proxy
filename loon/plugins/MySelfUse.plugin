@@ -5,7 +5,7 @@
 #!system =
 #!system_version =
 #!homepage = https://raw.githubusercontent.com/jianlu8023/proxy/master/loon/plugins/MySelfUse.plugin
-#!date = 2024-08-20 11:49:45
+#!date = 2024-08-20 22:40:19
 
 [Argument]
 TomorrowCron = input, "0 30 19 * * *", tag = 明日农历定时参数, desc = 这里需要输入符合CRON表达式的参数
