@@ -5,7 +5,7 @@
 #!system =
 #!system_version =
 #!homepage = https://raw.githubusercontent.com/jianlu8023/proxy/master/loon/plugins/MySelfUse.plugin
-#!date = 2024-08-20 22:40:19
+#!date = 2024-08-21 20:32:19
 
 [Argument]
 TomorrowCron = input, "0 30 19 * * *", tag = 明日农历定时参数, desc = 这里需要输入符合CRON表达式的参数
@@ -35,17 +35,28 @@ Day60s = switch, true, false, tag = 每天60秒读懂世界开关, desc = 此开
 
 [Script]
 cron {TomorrowCron} script-path = https://raw.githubusercontent.com/jianlu8023/proxy/master/resources/scripts/lunar.js, tag = 明日农历, timeout = 300, enable = {Tomorrow}
+
 cron {CountDownCron} script-path = https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/TimeCard.js, tag = 倒数日, timeout = 100, enable = {CountDown}, img-url = https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png,
-cron {GasPriceCron} script-path = https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js, tag = 今日油价, timeout = 100, enabled = {GasPrice},  argument = {GasPriceCity}, img-url = https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png,
+
+cron {GasPriceCron} script-path = https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js, tag = 今日油价, timeout = 100, enabled = {GasPrice},  argument = [{GasPriceCity}], img-url = https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png,
+
 generic script-path = https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js, tag = 网络信息查询, timeout = 120,  enable = {NetInfo}
-cron {AppCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/appsdoor.js, tag = AppStore限免APP, timeout = 100, enabled = {App}
-cron {NetEaseCloudCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/nm.js, tag = 网易云热歌榜, timeout = 100, enabled = {NetEaseCloud}
-cron {HistoryTodayCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, tag = 历史上的今天, timeout = 100, enabled = {HistoryTodayCron}
-cron {WeatherTodayCron} script-path = https://whatshub.top/plugin/tianqi.js, tag = 今日天气, timeout = 100, argument = {WeatherTodayCity}, enabled = {WeatherToday}
-cron {JrpyCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rumors.js, tag = 今日辟谣, timeout = 100, enabled = {Jrpy}
-cron {GasPriceCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/oil.js, tag = 油价提醒, timeout = 100, enabled = {GasPrice},  argument = {GasPriceCity1}
-cron {JrhlCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rates.js, tag = 今日汇率, timeout = 100, enabled = {Jrhl}
-cron {Day60sCron} script-path = https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, tag = 每天60秒读懂世界, timeout = 100, enabled = {Day60s},  img-url = https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/60s.png
+
+cron {AppCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/appsdoor.js, tag = AppStore限免APP, timeout = 100, enable={App}
+
+cron {NetEaseCloudCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/nm.js, tag = 网易云热歌榜, timeout = 100, enable={NetEaseCloud}
+
+cron {HistoryTodayCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, tag = 历史上的今天, timeout = 100, enable={HistoryTodayCron}
+
+cron {WeatherTodayCron} script-path = https://whatshub.top/plugin/tianqi.js, tag = 今日天气, timeout = 100, argument = [{WeatherTodayCity}], enable={WeatherToday}
+
+cron {JrpyCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rumors.js, tag = 今日辟谣, timeout = 100, enable={Jrpy}
+
+cron {GasPriceCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/oil.js, tag = 油价提醒, timeout = 100, enable={GasPrice},  argument = [{GasPriceCity1}]
+
+cron {JrhlCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rates.js, tag = 今日汇率, timeout = 100, enable={Jrhl}
+
+cron {Day60sCron} script-path = https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, tag = 每天60秒读懂世界, timeout = 100, enable={Day60s},  img-url = https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/60s.png
 
 [Rule]
 DOMAIN, t.weather.sojson.com, DIRECT
