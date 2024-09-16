@@ -46,13 +46,13 @@ cron {AppCron} script-path = https://raw.githubusercontent.com/deezertidal/priva
 
 cron {NetEaseCloudCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/nm.js, tag = 网易云热歌榜, timeout = 100, enable={NetEaseCloud}
 
-cron {HistoryTodayCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, tag = 历史上的今天, timeout = 100, enable={HistoryTodayCron}
+cron {HistoryTodayCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, tag = 历史上的今天, timeout = 100, enable={HistoryToday}
 
-cron {WeatherTodayCron} script-path = https://whatshub.top/plugin/tianqi.js, tag = 今日天气, timeout = 100, argument = [{WeatherTodayCity}], enable={WeatherToday}
+cron {WeatherTodayCron} script-path = https://whatshub.top/plugin/tianqi.js, tag = 今日天气, timeout = 100, argument = {WeatherTodayCity}, enable={WeatherToday}
 
 cron {JrpyCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rumors.js, tag = 今日辟谣, timeout = 100, enable={Jrpy}
 
-cron {GasPriceCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/oil.js, tag = 油价提醒, timeout = 100, enable={GasPrice},  argument = [{GasPriceCity1}]
+cron {GasPriceCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/oil.js, tag = 油价提醒, timeout = 100, enable={GasPrice},  argument = {GasPriceCity1}
 
 cron {JrhlCron} script-path = https://raw.githubusercontent.com/deezertidal/private/main/rates.js, tag = 今日汇率, timeout = 100, enable={Jrhl}
 
